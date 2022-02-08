@@ -1,4 +1,4 @@
-.PHONY: help setup run test
+.PHONY: help setup run test build
 
 help: ## Show help.
 	@printf "A set of development commands.\n"
@@ -15,3 +15,6 @@ run: ## Run local application.
 
 test: ## Run tests.
 	@poetry run pytest
+
+build: ## Build	application.
+	@poetry build
