@@ -11,7 +11,7 @@ setup: ## Setup application.
 	@poetry install
 
 run: ## Run local application.
-	@poetry run python your_script.py
+	@poetry run start
 
 test: ## Run tests.
 	@poetry run pytest
