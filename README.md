@@ -1,5 +1,7 @@
 # Cooler
 
+Cooler is an app to manage storage and stock data for a beverage warehouse. Currently the stock stores two types of beverages (alcoholic and non-alcoholic), however, this may change in the future.
+
 ## Built with
 
 This project uses the following technologies:
