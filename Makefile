@@ -14,7 +14,7 @@ run: ## Run local application.
 	@poetry run start
 
 test: ## Run tests.
-	@poetry run pytest
+	@poetry run pytest -v
 
 build: ## Build	application.
 	@poetry build
