@@ -16,3 +16,15 @@ SessionLocal = sessionmaker(
 )
 
 Base = declarative_base()
+
+def get_session():
+    session = SessionLocal()
+    try:
+        yield session
+    finally:
+        session.close()
+
+
+def create_database():
+    Base.metadata.drop_all(bind=engine)
+    Base.metadata.create_all(bind=engine)

@@ -2,23 +2,12 @@ import uvicorn
 from fastapi import FastAPI, Depends, status, HTTPException
 from sqlalchemy.orm import Session
 
-from .database import engine, Base, SessionLocal
+from .database import get_session, create_database
 from . import crud
 from .schemas import HistoryBase
 
 app = FastAPI()
-
-
-Base.metadata.drop_all(bind=engine)
-Base.metadata.create_all(bind=engine)
-
-
-def get_session():
-    session = SessionLocal()
-    try:
-        yield session
-    finally:
-        session.close()
+create_database()
 
 
 @app.get("/")
